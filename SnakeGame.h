@@ -5,7 +5,6 @@
 #include <iostream>
 #include <list>
 #include <time.h>
-#include <windows.h>
 #include "SnakeState.h"
 
 class SnakeGame

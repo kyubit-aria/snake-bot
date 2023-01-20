@@ -1,14 +1,16 @@
 #pragma once
-#include "SnakeState.h"
+#include "SnakeAgent.h"
 
-class GreedySnake
+class GreedySnake : public SnakeAgent
 {
 public:
 	GreedySnake(SnakeState);
+
+	void setState(SnakeState);
 	SnakeState::Movement decideAction();
-	void updateState(SnakeState);
 
 private:
+
 	bool isLegal(SnakeState::Movement);
 	bool elememtMovable(SnakeState::Elements);
 

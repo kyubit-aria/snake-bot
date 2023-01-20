@@ -62,29 +62,5 @@ struct SnakeState
 		}
 		return neighbour_eq && goal_direction_eq;
 	}
-
-	struct HashFunction
-	{
-		size_t operator()(const SnakeState& pos) const
-		{
-			size_t res = 2;
-			size_t neighbour = 2;
-			size_t goal = 2;
-
-			for (int i = 0; i < 8; i++)
-			{
-				res ^= (pos.neighbourhood[i] + 1) ;
-				res += (pos.neighbourhood[i]);
-			}
-
-			for (int i = 0; i < 4; i++)
-			{
-				res ^= (pos.goal_direction[i] + 1);
-				res += (pos.goal_direction[i]);
-			}
-
-			return res;
-		}
-	};
 };
 

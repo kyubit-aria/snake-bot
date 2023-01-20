@@ -10,7 +10,7 @@ SnakeState::Movement GreedySnake::decideAction()
 	return greedyDeathAvoid();
 }
 
-void GreedySnake::updateState(SnakeState state)
+void GreedySnake::setState(SnakeState state)
 {
 	this->observed_state = state;
 }
