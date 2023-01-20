@@ -9,7 +9,7 @@ void SnakeControl::resetGame()
 SnakeControl::~SnakeControl()
 {
 	if (agent != NULL)delete agent;
-	if (game != NULL)delete agent;
+	if (game != NULL)delete game;
 }
 
 void SnakeControl::run()
