@@ -46,6 +46,8 @@ private:
 	const double FRUIT_VALUE = 50.0;
 	const double WIN_VALUE = 1000.0;
 
+	const int sense_range = 3;
+
 	int field_height;
 	int field_width;
 	int field_size;
@@ -54,6 +56,7 @@ private:
 	SnakeState snake_state;
 
 	Position fruit_position;
+
 	std::list<Position> snake_body;
 	SnakeState::Movement snake_direction;
 	SnakeState::GameState game_state;

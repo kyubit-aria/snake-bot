@@ -119,7 +119,7 @@ SnakeState::Elements* SnakeGame::allocateFieldSpace(int height, int width)
 	}
 
 	if (game_state == SnakeState::RUNNING) game_state = SnakeState::STOPPED;
-	game_field = (SnakeState::Elements*)malloc((height * width) * sizeof(SnakeState::Elements));
+	game_field = (SnakeState::Elements*) malloc( (height * width) * sizeof(SnakeState::Elements));
 
 	if (game_field == NULL)
 	{
@@ -138,10 +138,10 @@ SnakeGame::Position SnakeGame::getHeadOffsetPosition(SnakeState::Movement direct
 {
 	switch (direction)
 	{
-	case SnakeState::UP: {return Position(snake_body.back().vertical + 1, snake_body.back().horizontal); }
-	case SnakeState::DOWN: {return Position(snake_body.back().vertical - 1, snake_body.back().horizontal); }
-	case SnakeState::LEFT: {return Position(snake_body.back().vertical, snake_body.back().horizontal - 1); }
-	case SnakeState::RIGHT: {return Position(snake_body.back().vertical, snake_body.back().horizontal + 1); }
+		case SnakeState::UP: {return Position(snake_body.back().vertical + 1, snake_body.back().horizontal); }
+		case SnakeState::DOWN: {return Position(snake_body.back().vertical - 1, snake_body.back().horizontal); }
+		case SnakeState::LEFT: {return Position(snake_body.back().vertical, snake_body.back().horizontal - 1); }
+		case SnakeState::RIGHT: {return Position(snake_body.back().vertical, snake_body.back().horizontal + 1); }
 	}
 }
 
@@ -266,9 +266,9 @@ void SnakeGame::updateSnakeState()
 
 	SnakeGame::Position temp_pos(0, 0);
 
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < sense_range; i++)
 	{
-		for (int k = 0; k < 3; k++)
+		for (int k = 0; k < sense_range; k++)
 		{
 			if (i == 1 && k == 1) continue;
 
